@@ -1,121 +1,203 @@
-/* ========= GLOBAL STYLES ========= */
+/* ===== Reset & Fonts ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
 body {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* ========= NAVBAR ========= */
+/* ===== Navbar ===== */
 header {
+  position: fixed;
+  top: 0;
   width: 100%;
-  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  backdrop-filter: blur(12px);
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 0 0 20px 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 18px 60px;
+  z-index: 1000;
 }
-
-header .logo {
-  font-size: 1.5rem;
+header h1 {
+  font-size: 1.8rem;
   font-weight: 700;
   color: #fff;
-  text-decoration: none;
 }
-
-header nav a {
-  margin-left: 1.2rem;
-  color: #fff;
+nav a {
+  margin: 0 18px;
   text-decoration: none;
+  color: #f1f1f1;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.3s, border-bottom 0.3s;
+  padding-bottom: 4px;
+}
+nav a:hover {
+  color: #00f2fe;
+  border-bottom: 2px solid #00f2fe;
 }
 
-header nav a:hover {
-  color: #ffd369;
-}
-
-/* ========= SECTIONS ========= */
-section {
-  width: 90%;
-  max-width: 1100px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  backdrop-filter: blur(15px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-}
-
-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+/* ===== Hero Section ===== */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  color: #fff;
+  padding: 0 20px;
 }
-
-section p {
-  text-align: center;
-  line-height: 1.6;
-  color: #eee;
+.hero h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-
-/* ========= BUTTONS ========= */
-button, .btn {
-  display: inline-block;
-  background: linear-gradient(135deg, #ff512f, #dd2476);
-  color: #fff;
-  padding: 0.8rem 1.6rem;
-  margin-top: 1rem;
+.hero p {
+  margin-top: 15px;
+  font-size: 1.3rem;
+  color: #e0f7ff;
+}
+.btn {
+  margin-top: 25px;
+  padding: 14px 35px;
   border: none;
-  border-radius: 50px;
+  border-radius: 40px;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: #fff;
+  font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 242, 254, 0.6);
 }
 
-button:hover, .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+/* ===== Sections ===== */
+section {
+  padding: 100px 60px;
+  text-align: center;
+}
+section h3 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
 }
 
-/* ========= FEATURES / CARDS ========= */
+/* ===== Cards ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
 .card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 1.5rem;
-  text-align: center;
-  margin: 1rem;
-  flex: 1;
-  transition: transform 0.3s ease;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 35px 25px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.15);
 }
-
 .card:hover {
-  transform: scale(1.05);
-  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+.card h4 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #00f2fe;
+}
+.card p {
+  color: #f1f1f1;
+  font-size: 0.95rem;
 }
 
-/* ========= FOOTER ========= */
+/* ===== Contact ===== */
+.contact p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+.contact a {
+  color: #00f2fe;
+  text-decoration: none;
+  font-weight: 500;
+}
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Footer ===== */
 footer {
-  width: 100%;
+  background: rgba(0,0,0,0.5);
+  padding: 25px;
   text-align: center;
-  padding: 1.5rem;
-  margin-top: auto;
-  background: rgba(0, 0, 0, 0.3);
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #ddd;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 15px;
+  }
+  nav {
+    margin-top: 10px;
+  }
+  .hero h2 {
+    font-size: 2.3rem;
+  }
+  section {
+    padding: 80px 25px;
+  }
+}
+#register form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+#register input, #register select {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+#msg {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #00f2fe;
+}
+
+/* ===== Dark Mode ===== */
+.dark-mode {
+  background: #121212;
+  color: #f1f1f1;
+}
+.dark-mode header {
+  background: rgba(255,255,255,0.05);
+}
+.dark-mode .card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.dark-mode footer {
+  background: rgba(255,255,255,0.05);
 }
